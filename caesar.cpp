@@ -10,9 +10,15 @@ void ciphetext(char plaintext[100],int key){
 	for(i=0;i<strlen(plaintext);i++){
 		if(plaintext[i]>='A'&&plaintext[i]<='Z'){
 			plaintext[i]+=key;
+			if(plaintext[i]>'Z'){
+                plaintext[i]-=26;
+            }
 		}
 		else if(plaintext[i]>='a'&&plaintext[i]<='z'){
 			plaintext[i]+=key;
+			if(plaintext[i]>'z'){
+                plaintext[i]-=26;
+            }
 		}
 	}
 	printf("%s ,key=%d\n",plaintext,key);
