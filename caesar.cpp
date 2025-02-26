@@ -9,16 +9,10 @@ void ciphetext(char plaintext[100],int key){
 	//對每個字元向右偏移n個，key為n
 	for(i=0;i<strlen(plaintext);i++){
 		if(plaintext[i]>='A'&&plaintext[i]<='Z'){
-			plaintext[i]+=key;
-			if(plaintext[i]>'Z'){
-                plaintext[i]-=26;
-            }
+			plaintext[i]=(plaintext[i]-'A'+key)%26+'A';
 		}
 		else if(plaintext[i]>='a'&&plaintext[i]<='z'){
-			plaintext[i]+=key;
-			if(plaintext[i]>'z'){
-                plaintext[i]-=26;
-            }
+			plaintext[i]=(plaintext[i]-'a'+key)%26+'a';
 		}
 	}
 	printf("%s ,key=%d\n",plaintext,key);
