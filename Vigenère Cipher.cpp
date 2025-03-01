@@ -4,7 +4,7 @@
 
 //Vigenere Cipher
 
-//¥[±K 
+//åŠ å¯† 
 void encode(char plaintext[1000],char key[100]){
 	int i,j;
 	i=0;
@@ -19,10 +19,10 @@ void encode(char plaintext[1000],char key[100]){
 			i++;
 		}
 	}
-	printf("¥[±K«á: %s\n\n",plaintext);
+	printf("åŠ å¯†å¾Œ: %s\n\n",plaintext);
 }
 
-//¸Ñ±K 
+//è§£å¯† 
 void decode(char cyphertext[1000],char key[100]){
 	int i,j;
 	i=0;
@@ -41,7 +41,7 @@ void decode(char cyphertext[1000],char key[100]){
 		}
 		i++;
 	}
-	printf("¸Ñ±K«á: %s\n\n",cyphertext);
+	printf("è§£å¯†å¾Œ: %s\n\n",cyphertext);
 }
 
 int main(){
@@ -49,13 +49,13 @@ int main(){
 	char text[1000],key[100];
 	
 	//DPR AVBVSKBR SOIFABM BL K UNT SA AUD EUKBM UK CBNTNA VT WWZKXBF UP KBSPWEZ KVQ IYVIKXQRTMM, OAD EUKBM UK CBNTNA NZ DQZKC WS IRIYROVTK KVQ IYVGXYDRXCG.--ZGBBVT VCGNOZ XOXO
-	printf("½Ğ¿ï¾Ü :\n1. ¥[±K\n2. ¸Ñ±K\n");
+	printf("è«‹é¸æ“‡ :\n1. åŠ å¯†\n2. è§£å¯†\n");
 	while (scanf("%d",&n)!='EOF'){
 		getchar();
-		printf("½Ğ¿é¤J¤å¥»:");
+		printf("è«‹è¼¸å…¥æ–‡æœ¬:");
 		scanf("%[^\n]",text);
 		getchar();
-		printf("½Ğ¿é¤J±KÆ_:");
+		printf("è«‹è¼¸å…¥å¯†é‘°:");
 		scanf("%[^\n]",key);
 		if (n==1){
 			encode(text,key);
@@ -66,7 +66,7 @@ int main(){
 		else {
 			printf("error");
 		}
-		printf("½Ğ¿ï¾Ü :\n1. ¥[±K\n2. ¸Ñ±K\n");
+		printf("è«‹é¸æ“‡ :\n1. åŠ å¯†\n2. è§£å¯†\n");
 	}
 	return 0;
 }
