@@ -4,11 +4,12 @@
 
 //Vigenere Cipher
 
-//加密 
+//加密
 void encode(char plaintext[1000],char key[100]){
 	int i,j;
 	i=0;
 	while (i<strlen(plaintext)){
+        //C = (P + K) % 26
 		for (j=0;j<strlen(key);j++){
 			if (plaintext[i]>='A'&&plaintext[i]<='Z'){
 				plaintext[i]=((plaintext[i]-'A')+(key[j]-'A'))%26+'A';
@@ -22,7 +23,7 @@ void encode(char plaintext[1000],char key[100]){
 	printf("加密後: %s\n\n",plaintext);
 }
 
-//解密 
+//解密
 void decode(char cyphertext[1000],char key[100]){
 	int i,j;
 	i=0;
@@ -31,6 +32,7 @@ void decode(char cyphertext[1000],char key[100]){
 		if (j==strlen(key)){
 			j=0;
 		}
+		//P = (C - K + 26) % 26
 		if (cyphertext[i]>='A'&&cyphertext[i]<='Z'){
 			cyphertext[i]=((cyphertext[i]-'A')-(key[j]-'A')+26)%26+'A';
 			j++;
@@ -47,7 +49,7 @@ void decode(char cyphertext[1000],char key[100]){
 int main(){
 	int n;
 	char text[1000],key[100];
-	
+
 	//DPR AVBVSKBR SOIFABM BL K UNT SA AUD EUKBM UK CBNTNA VT WWZKXBF UP KBSPWEZ KVQ IYVIKXQRTMM, OAD EUKBM UK CBNTNA NZ DQZKC WS IRIYROVTK KVQ IYVGXYDRXCG.--ZGBBVT VCGNOZ XOXO
 	printf("請選擇 :\n1. 加密\n2. 解密\n");
 	while (scanf("%d",&n)!='EOF'){
